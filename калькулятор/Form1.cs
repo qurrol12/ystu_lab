@@ -39,7 +39,9 @@ namespace калькулятор
                     break;
                 case 4:
                     b = a / float.Parse(textBox1.Text);
-                    textBox1.Text = b.ToString();
+                    if (b == 0)
+                        textBox1.Text = "На ноль делить нельзя";
+                    else textBox1.Text = (a / b).ToString();
                     break;
 
                 default:
