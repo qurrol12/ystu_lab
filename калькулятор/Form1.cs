@@ -16,6 +16,17 @@ namespace калькулятор
         {
             InitializeComponent();
             MessageBox.Show("Добро пожаловать в программу");
+            FormClosing += Form1_FormClosing;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Хотите закрыть программу?", "Подтверждение закрытия", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
 
         float a, b;
@@ -156,6 +167,11 @@ namespace калькулятор
             {
                 textBox1.Text = textBox1.Text + text[i];
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
         }
 
         private void button12_Click(object sender, EventArgs e)
