@@ -15,6 +15,7 @@ namespace калькулятор
         public Form1()
         {
             InitializeComponent();
+            MessageBox.Show("Добро пожаловать в программу");
         }
 
         float a, b;
